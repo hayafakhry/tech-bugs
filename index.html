@@ -1,187 +1,211 @@
 <!DOCTYPE html>
-<html lang="ms">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Pembelajaran IT | Network+ & Cloud+</title>
-    <link rel="stylesheet" href="style.css">
+    <title>HayaTechBugs | IT Learning Portfolio</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/server.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/bug.png">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">
-                <i class="fas fa-server"></i>
-                <div>
-                    <h1>HayaTech<span>Bugs</span></h1>
-                    <p class="subtitle">Portfolio & Pembelajaran IT</p>
-                </div>
+    <!-- Background Clouds -->
+    <div class="cloud" style="top: 10%; left: 5%; width: 120px; height: 40px; animation-delay: 0s;"></div>
+    <div class="cloud" style="top: 25%; right: 8%; width: 150px; height: 50px; animation-delay: 2s;"></div>
+    <div class="cloud" style="top: 60%; left: 10%; width: 100px; height: 35px; animation-delay: 4s;"></div>
+    <div class="cloud" style="top: 75%; right: 15%; width: 130px; height: 45px; animation-delay: 6s;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="network.html">Network+</a>
+                <a href="cloud.html">Cloud+</a>
+                <a href="dota.html">Dota 2</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="medsoc.html">MedSoc</a>
             </div>
-            <nav class="navbar">
-                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
-                <a href="#"><i class="fas fa-network-wired"></i> Network+</a>
-                <a href="#"><i class="fas fa-cloud"></i> Cloud+</a>
-                <a href="#"><i class="fas fa-project-diagram"></i> Projek Lab</a>
-                <a href="#"><i class="fas fa-file-alt"></i> Resume</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header/Brand -->
+        <header class="brand-header">
+            <div class="header-icons">
+                <span class="butterfly-icon">🦋</span>
+                <span class="hotchocolate-icon">
+                    ☕
+                    <div class="steam s1"></div>
+                    <div class="steam s2"></div>
+                    <div class="steam s3"></div>
+                </span>
+            </div>
+            <div class="header-text">
+                <h1 class="haya-text">Haya</h1>
+                <h2 class="techbugs-text">TechBugs</h2>
+                <p class="tagline">IT Learning Journey & Portfolio</p>
+            </div>
         </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-text">
-                <h2>Catatan Perjalanan IT Haya Fakhry</h2>
-                <p>Blog ini adalah dokumentasi pembelajaran ringkas Haya dalam program <strong>Yayasan Peneraju</strong> untuk persediaan sijil <strong>CompTIA Network+ & Cloud+</strong>. Haya kongsikan nota, lab, dan tutorial ringkas untuk rujukan pelajar dan orang awam yang berminat dengan asas Network dan Cloud.</p>
-                <a href="#posts" class="btn-hero">Mula Baca Nota <i class="fas fa-arrow-down"></i></a>
-            </div>
-            <div class="hero-image">
-                <img src="https://i.ibb.co/wFVT9czs/45530788-s.jpg" alt="45530788-s" border="0"></a>" alt="Haya Fakhry">
-            </div>
-        </section>
-
-        <!-- Main Content -->
-        <main class="main-content" id="posts">
-            <!-- Network+ Section -->
-            <section class="category-section">
-                <h3><i class="fas fa-network-wired"></i> CompTIA Network+</h3>
-                <div class="post-grid">
-                    <article class="post-card">
-                        <div class="post-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Topologi Jaringan & Keselamatan</h4>
-                        <p class="post-date"><i class="far fa-calendar"></i> 20 Mac 2024 | Lab #3</p>
-                        <p>Belajar tentang DMZ, firewall rules, dan network segmentation. Buat simulasi menggunakan Packet Tracer.</p>
-                        <a href="#" class="card-link">Baca Nota Lengkap <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-icon">
-                            <i class="fas fa-wifi"></i>
-                        </div>
-                        <h4>Wireless Standards (802.11ac/ax)</h4>
-                        <p class="post-date"><i class="far fa-calendar"></i> 18 Mac 2024 | Nota #5</p>
-                        <p>Perbandingan antara Wi-Fi 5 vs Wi-Fi 6, frequency bands, dan best practices untuk deployment.</p>
-                        <a href="#" class="card-link">Baca Nota Lengkap <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Cloud+ Section -->
-            <section class="category-section">
-                <h3><i class="fas fa-cloud"></i> CompTIA Cloud+</h3>
-                <div class="post-grid">
-                    <article class="post-card">
-                        <div class="post-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h4>Virtualization vs Containerization</h4>
-                        <p class="post-date"><i class="far fa-calendar"></i> 15 Mac 2024 | Lab #2</p>
-                        <p>Hands-on dengan Docker vs VMware. Deploy web app menggunakan container dan bandingkan dengan VM.</p>
-                        <a href="#" class="card-link">Baca Nota Lengkap <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4>Cloud Storage Types</h4>
-                        <p class="post-date"><i class="far fa-calendar"></i> 12 Mac 2024 | Nota #4</p>
-                        <p>Memahami perbezaan antara object, block, dan file storage dalam AWS S3, EBS, dan Azure Blob.</p>
-                        <a href="#" class="card-link">Baca Nota Lengkap <i class="fas fa-external-link-alt"></i></a>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Lab Projects -->
-            <section class="category-section">
-                <h3><i class="fas fa-flask"></i> Projek Hands-On Lab</h3>
-                <div class="lab-showcase">
-                    <div class="lab-item">
-                        <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Network Lab">
-                        <div class="lab-desc">
-                            <h5>Packet Tracer</h5>
-                            <p>Langkah-langkah membuat VLAN menggunakan Packet Tracer.</p>
-                            <span class="lab-tag">Network+</span>
-                            <span class="lab-tag">Linux</span>
-                        </div>
+        <!-- Main Layout: Blog + Sidebar -->
+        <div class="main-layout">
+            <!-- Left: Blog Posts (70%) -->
+            <main class="blog-feed">
+                <h3 class="section-title">Latest Learning Notes</h3>
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <span class="post-category">Network+</span>
+                    <h2 class="post-title">Firewall Configuration with pfSense</h2>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> March 25, 2024</span>
+                        <span><i class="far fa-clock"></i> 5 min read</span>
+                        <span><i class="fas fa-tags"></i> Lab, Security</span>
                     </div>
-                    <div class="lab-item">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cloud Server">
-                        <div class="lab-desc">
-                            <h5>Deploy Web App di AWS EC2</h5>
-                            <p>Menggunakan Linux, Ubuntu server untuk deploy portfolio website awak bersama Haya!</p>
-                            <span class="lab-tag">Cloud+</span>
-                            <span class="lab-tag">AWS</span>
-                        </div>
+                    <div class="post-excerpt">
+                        <p>Today I configured firewall rules using pfSense in a virtual lab environment. Set up NAT, port forwarding, and VPN access for a simulated network. Learned about rule ordering and logging...</p>
                     </div>
-                </div>
-            </section>
-        </main>
+                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="widget">
-                <h3><i class="fas fa-user-graduate"></i> Tentang Saya</h3>
-                <img src="https://i.ibb.co/Vp0kmP4t/596662722-4175422759386831-5325494817152527535-n.jpg" alt="Haya" class="https://www.facebook.com/share/p/1DXEpvKjM4/">
-                <p><strong>Haya Fakhry</strong><br>Diploma di dalam Computer System and Networking. Pelajar Comptia Network+ dan Cloud+ di bawah Yayasan Peneraju. <strong>CompTIA Network+ & Cloud+</strong>. Berminat dalam cloud computing.</p>
-            </div>
-            <div class="widget">
-                <h3><i class="fas fa-tools"></i> Kemahiran Teknikal</h3>
-                <ul class="skills">
-                    <li>TCP/IP & Subnetting <span class="skill-level advanced">Advanced</span></li>
-                    <li>Network Security <span class="skill-level intermediate">Intermediate</span></li>
-                    <li>AWS Fundamentals <span class="skill-level intermediate">Intermediate</span></li>
-                    <li>Docker Basics <span class="skill-level beginner">Beginner</span></li>
-                    <li>Linux CLI <span class="skill-level intermediate">Intermediate</span></li>
-                </ul>
-            </div>
-            <div class="widget">
-                <h3><i class="fas fa-calendar-check"></i> Progress Sijil</h3>
-                <div class="progress-bar">
-                    <p>Network+ <span>65%</span></p>
-                    <div class="bar"><div class="fill" style="width:65%"></div></div>
-                </div>
-                <div class="progress-bar">
-                    <p>Cloud+ <span>40%</span></p>
-                    <div class="bar"><div class="fill" style="width:40%"></div></div>
-                </div>
-            </div>
-            <div class="widget">
-                <h3><i class="fas fa-download"></i> Resume</h3>
-                <p>Muat turun resume terkini saya dalam format PDF.</p>
-                <a href="#" class="btn-download"><i class="fas fa-file-pdf"></i> Download Resume.pdf</a>
-            </div>
-        </aside>
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <span class="post-category">Cloud+</span>
+                    <h2 class="post-title">AWS EC2 Instance Deployment</h2>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> March 22, 2024</span>
+                        <span><i class="far fa-clock"></i> 7 min read</span>
+                        <span><i class="fas fa-tags"></i> AWS, Deployment</span>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>Deployed a web application on AWS EC2 using Ubuntu server. Configured security groups, attached EBS storage, and set up Nginx with Let's Encrypt SSL. Explored instance types and pricing models...</p>
+                    </div>
+                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
+                </article>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h4><i class="fas fa-bug"></i> FiyTechNotes</h4>
-                    <p>Blog pembelajaran & portfolio IT. Dibangunkan sebagai dokumentasi untuk kerjaya masa depan.</p>
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <span class="post-category">Personal</span>
+                    <h2 class="post-title">My Yayasan Peneraju Journey Begins</h2>
+                    <div class="post-meta">
+                        <span><i class="far fa-calendar"></i> March 20, 2024</span>
+                        <span><i class="far fa-clock"></i> 4 min read</span>
+                        <span><i class="fas fa-tags"></i> Reflection, Learning</span>
+                    </div>
+                    <div class="post-excerpt">
+                        <p>Starting my CompTIA Network+ and Cloud+ certification journey through Yayasan Peneraju. This blog will document my progress, challenges, and achievements as I prepare for a career in IT infrastructure...</p>
+                    </div>
+                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <!-- Load More Button -->
+                <div class="load-more">
+                    <button class="load-btn">Load Older Posts <i class="fas fa-chevron-down"></i></button>
                 </div>
-                <div class="footer-links">
-                    <h4>Pautan Cepat</h4>
-                    <a href="#"><i class="fas fa-link"></i> GitHub Repositori</a>
-                    <a href="www.linkedin.com/in/haya-fakhry-bb267218b"><i class="fas fa-link"></i> LinkedIn Profile</a>
-                    <a href="#"><i class="fas fa-link"></i> Yayasan Peneraju</a>
-                </div>
-                <div class="footer-contact">
-                    <h4>Hubungi</h4>
-                    <p><i class="fas fa-envelope"></i> hayatifakhry@gmail.com</p>
-                    <div class="social">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="www.linkedin.com/in/haya-fakhry-bb267218b"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+            </main>
+
+            <!-- Right: Sidebar About (30%) -->
+            <aside class="sidebar-about">
+                <div class="profile-card">
+                    <!-- GANTI LINK INI DENGAN GAMBAR FIY NANTI -->
+                    <img src="https://raw.githubusercontent.com/hayafakhry/tech-bugs/main/haya-profile.jpg" 
+                         alt="Haya Fakhry" 
+                         class="profile-pic" 
+                         onerror="this.src='https://ui-avatars.com/api/?name=Haya+Fakhry&background=967aa1&color=fff&size=150'">
+                    
+                    <h3 class="profile-name">Haya Fakhry</h3>
+                    <p class="profile-title">IT Student | Yayasan Peneraju</p>
+                    
+                    <div class="profile-details">
+                        <p><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> Diploma in Computer System & Networking</p>
+                        <p><i class="fas fa-certificate"></i> <strong>Certifications:</strong> CompTIA Network+ & Cloud+ (In Progress)</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Malaysia</p>
+                        <p><i class="fas fa-bullseye"></i> <strong>Goal:</strong> Network/Cloud Engineer</p>
+                    </div>
+
+                    <!-- Progress Bars -->
+                    <div class="progress-section">
+                        <p>Network+ Progress <span>65%</span></p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
+                        
+                        <p>Cloud+ Progress <span>40%</span></p>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links-sidebar">
+                        <a href="https://github.com/hayafakhry" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:hayatifakhry@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Quick Links -->
+                <div class="quick-links">
+                    <h4><i class="fas fa-link"></i> Quick Links</h4>
+                    <a href="network.html"><i class="fas fa-network-wired"></i> Network+ Notes</a>
+                    <a href="cloud.html"><i class="fas fa-cloud"></i> Cloud+ Labs</a>
+                    <a href="portfolio.html"><i class="fas fa-code"></i> Projects</a>
+                    <a href="dota.html"><i class="fas fa-gamepad"></i> Dota 2 Corner</a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer Contact -->
+        <footer class="contact-footer">
+            <div class="contact-container">
+                <h3 class="contact-title">Contact Haya Fakhry</h3>
+                
+                <div class="email-box">
+                    <div class="email-icon">✉️</div>
+                    <a href="mailto:hayatifakhry@gmail.com" class="email-link">
+                        hayatifakhry@gmail.com
+                    </a>
+                </div>
+                
+                <div class="social-links-footer">
+                    <a href="https://github.com/hayafakhry" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                
+                <p class="copyright">
+                    © 2024 Haya TechBugs. All learning content documented here.
+                </p>
             </div>
-            <p class="copyright">© 2024 FiyTechBugs. Dibina dengan <i class="fas fa-heart"></i> untuk portfolio IT, Haya Fakhry.</p>
         </footer>
     </div>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
