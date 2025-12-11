@@ -1,211 +1,1163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HayaTechBugs | IT Learning Portfolio</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
+    <title>Haya TechBugs - Cloud & Network Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/bug.png">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --bg-light: #f8f9fa;
+            --bg-lighter: #ffffff;
+            --text-dark: #222222;
+            --text-medium: #555555;
+            --accent: #5a189a;
+            --accent-light: #9d4edd;
+            --border: #e0e0e0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== MEGA HEADER ===== */
+        .mega-header {
+            height: 100vh;
+            background: linear-gradient(135deg, #fdfcfb 0%, #f5f7fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+
+        .main-title {
+            font-size: 7rem;
+            font-weight: 900;
+            color: #111;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 3.5rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .title-part {
+            display: inline-block;
+        }
+
+        .haya {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .techbugs {
+            color: #111;
+            position: relative;
+        }
+
+        /* ===== HOT CHOCOLATE MUG ===== */
+        .mug-container {
+            position: relative;
+            display: inline-block;
+            animation: vibrate 2s ease-in-out infinite;
+            margin: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .mug-container {
+                margin: 20px 0;
+            }
+        }
+
+        .mug {
+            width: 120px;
+            height: 140px;
+            background: #fff;
+            border: 10px solid var(--accent);
+            border-radius: 20px 20px 60px 60px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .mug {
+                width: 80px;
+                height: 100px;
+                border-width: 8px;
+            }
+        }
+
+        .mug-handle {
+            position: absolute;
+            right: -35px;
+            top: 40px;
+            width: 40px;
+            height: 70px;
+            border: 10px solid var(--accent);
+            border-left: none;
+            border-radius: 0 25px 25px 0;
+        }
+
+        @media (max-width: 768px) {
+            .mug-handle {
+                right: -25px;
+                width: 30px;
+                height: 50px;
+                border-width: 8px;
+            }
+        }
+
+        .hot-chocolate {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to top, #8B4513, #D2691E);
+            border-radius: 10px 10px 50px 50px;
+            overflow: hidden;
+        }
+
+        .marshmallow {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            top: 15px;
+            left: 25px;
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.1);
+        }
+
+        .marshmallow:nth-child(2) {
+            left: 55px;
+            top: 10px;
+            width: 25px;
+            height: 25px;
+        }
+
+        /* ===== STEAM EFFECT ===== */
+        .steam {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .steam-cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            filter: blur(8px);
+            opacity: 0.8;
+        }
+
+        .cloud1 {
+            width: 35px;
+            height: 25px;
+            top: 0;
+            left: 0;
+            animation: steamRise 3s infinite ease-in-out;
+        }
+
+        .cloud2 {
+            width: 45px;
+            height: 30px;
+            top: -10px;
+            left: 15px;
+            animation: steamRise 3s infinite ease-in-out 0.5s;
+        }
+
+        .cloud3 {
+            width: 30px;
+            height: 20px;
+            top: -5px;
+            left: -10px;
+            animation: steamRise 3s infinite ease-in-out 1s;
+        }
+
+        /* ===== SUBTITLE ===== */
+        .subtitle {
+            font-size: 1.8rem;
+            color: var(--text-medium);
+            font-weight: 400;
+            margin-top: 30px;
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .subtitle {
+                font-size: 1.3rem;
+                padding: 0 10px;
+            }
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ===== NAVIGATION BAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+
+        .nav-menu a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 1.05rem;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+            background: rgba(90, 24, 154, 0.08);
+        }
+
+        .nav-menu a.active {
+            color: var(--accent);
+            background: rgba(90, 24, 154, 0.12);
+            font-weight: 600;
+        }
+
+        /* ===== CONTENT BOX STYLE ===== */
+        .content-box {
+            background: var(--bg-lighter);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* ===== HOMEPAGE LAYOUT ===== */
+        .main-container {
+            display: flex;
+            margin-top: 80px;
+            padding: 40px;
+            gap: 40px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+                padding: 20px;
+                margin-top: 100px;
+            }
+        }
+
+        /* ===== LATEST POST SECTION ===== */
+        .latest-post {
+            flex: 2;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .latest-post::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .latest-post::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        .post-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .post-date {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 2rem;
+            }
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+        }
+
+        .post-content h3 {
+            color: var(--accent);
+            margin: 25px 0 15px;
+            font-size: 1.4rem;
+        }
+
+        /* ===== TOC SIDEBAR ===== */
+        .toc-sidebar {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        @media (max-width: 1024px) {
+            .toc-sidebar {
+                min-width: 100%;
+            }
+        }
+
+        .toc-container {
+            position: sticky;
+            top: 100px;
+            height: 70vh;
+            overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+            .toc-container {
+                height: 50vh;
+                position: relative;
+                top: 0;
+            }
+        }
+
+        .toc-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-list {
+            list-style: none;
+            animation: scrollToc 30s linear infinite;
+            padding: 10px 0;
+        }
+
+        .toc-list:hover {
+            animation-play-state: paused;
+        }
+
+        .toc-item {
+            background: var(--bg-light);
+            margin-bottom: 15px;
+            padding: 18px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .toc-item:hover {
+            background: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        .toc-item-date {
+            display: block;
+            color: var(--text-medium);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* ===== ABOUT PAGE ===== */
+        .about-container {
+            max-width: 700px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--accent);
+            margin: 0 auto 25px;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+                font-size: 3rem;
+            }
+        }
+
+        .name {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2rem;
+            }
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-item {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--border);
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--bg-lighter);
+            border-top: 1px solid var(--border);
+            padding: 50px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .email {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .copyright {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
+            margin-top: 25px;
+        }
+
+        /* ===== PAGE SECTIONS ===== */
+        .page-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes vibrate {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-3px) rotate(0.5deg);
+            }
+            75% {
+                transform: translateY(2px) rotate(-0.5deg);
+            }
+        }
+
+        @keyframes steamRise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes scrollToc {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-50%);
+            }
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        /* ===== BACK TO TOP BUTTON ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-light);
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-    <!-- Background Clouds -->
-    <div class="cloud" style="top: 10%; left: 5%; width: 120px; height: 40px; animation-delay: 0s;"></div>
-    <div class="cloud" style="top: 25%; right: 8%; width: 150px; height: 50px; animation-delay: 2s;"></div>
-    <div class="cloud" style="top: 60%; left: 10%; width: 100px; height: 35px; animation-delay: 4s;"></div>
-    <div class="cloud" style="top: 75%; right: 15%; width: 130px; height: 45px; animation-delay: 6s;"></div>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="network.html">Network+</a>
-                <a href="cloud.html">Cloud+</a>
-                <a href="dota.html">Dota 2</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="medsoc.html">MedSoc</a>
-            </div>
-        </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <a href="#top" class="logo">
+            <i class="fas fa-cloud"></i>
+            Haya TechBugs
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#home" class="active" data-page="home">Home</a></li>
+            <li><a href="#about" data-page="about">About</a></li>
+            <li><a href="#network" data-page="network">Network+</a></li>
+            <li><a href="#cloud" data-page="cloud">Cloud+</a></li>
+            <li><a href="#dota2" data-page="dota2">Dota2</a></li>
+            <li><a href="#portfolio" data-page="portfolio">Portfolio</a></li>
+            <li><a href="#medsoc" data-page="medsoc">Medsoc</a></li>
+        </ul>
     </nav>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Header/Brand -->
-        <header class="brand-header">
-            <div class="header-icons">
-                <span class="butterfly-icon">🦋</span>
-                <span class="hotchocolate-icon">
-                    ☕
-                    <div class="steam s1"></div>
-                    <div class="steam s2"></div>
-                    <div class="steam s3"></div>
+    <!-- Mega Header -->
+    <header class="mega-header" id="top">
+        <div class="header-content">
+            <h1 class="main-title">
+                <span class="title-part haya">HAYA</span>
+                <span class="title-part techbugs">
+                    TECHBUGS
+                    <div class="mug-container">
+                        <div class="mug">
+                            <div class="hot-chocolate">
+                                <div class="marshmallow"></div>
+                                <div class="marshmallow"></div>
+                            </div>
+                            <div class="mug-handle"></div>
+                            <div class="steam">
+                                <div class="steam-cloud cloud1"></div>
+                                <div class="steam-cloud cloud2"></div>
+                                <div class="steam-cloud cloud3"></div>
+                            </div>
+                        </div>
+                    </div>
                 </span>
-            </div>
-            <div class="header-text">
-                <h1 class="haya-text">Haya</h1>
-                <h2 class="techbugs-text">TechBugs</h2>
-                <p class="tagline">IT Learning Journey & Portfolio</p>
-            </div>
-        </header>
-
-        <!-- Main Layout: Blog + Sidebar -->
-        <div class="main-layout">
-            <!-- Left: Blog Posts (70%) -->
-            <main class="blog-feed">
-                <h3 class="section-title">Latest Learning Notes</h3>
-                
-                <!-- Blog Post 1 -->
-                <article class="blog-post">
-                    <span class="post-category">Network+</span>
-                    <h2 class="post-title">Firewall Configuration with pfSense</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 25, 2024</span>
-                        <span><i class="far fa-clock"></i> 5 min read</span>
-                        <span><i class="fas fa-tags"></i> Lab, Security</span>
-                    </div>
-                    <div class="post-excerpt">
-                        <p>Today I configured firewall rules using pfSense in a virtual lab environment. Set up NAT, port forwarding, and VPN access for a simulated network. Learned about rule ordering and logging...</p>
-                    </div>
-                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
-                </article>
-
-                <!-- Blog Post 2 -->
-                <article class="blog-post">
-                    <span class="post-category">Cloud+</span>
-                    <h2 class="post-title">AWS EC2 Instance Deployment</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 22, 2024</span>
-                        <span><i class="far fa-clock"></i> 7 min read</span>
-                        <span><i class="fas fa-tags"></i> AWS, Deployment</span>
-                    </div>
-                    <div class="post-excerpt">
-                        <p>Deployed a web application on AWS EC2 using Ubuntu server. Configured security groups, attached EBS storage, and set up Nginx with Let's Encrypt SSL. Explored instance types and pricing models...</p>
-                    </div>
-                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="blog-post">
-                    <span class="post-category">Personal</span>
-                    <h2 class="post-title">My Yayasan Peneraju Journey Begins</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> March 20, 2024</span>
-                        <span><i class="far fa-clock"></i> 4 min read</span>
-                        <span><i class="fas fa-tags"></i> Reflection, Learning</span>
-                    </div>
-                    <div class="post-excerpt">
-                        <p>Starting my CompTIA Network+ and Cloud+ certification journey through Yayasan Peneraju. This blog will document my progress, challenges, and achievements as I prepare for a career in IT infrastructure...</p>
-                    </div>
-                    <a href="#" class="read-more">Read full post <i class="fas fa-arrow-right"></i></a>
-                </article>
-
-                <!-- Load More Button -->
-                <div class="load-more">
-                    <button class="load-btn">Load Older Posts <i class="fas fa-chevron-down"></i></button>
-                </div>
-            </main>
-
-            <!-- Right: Sidebar About (30%) -->
-            <aside class="sidebar-about">
-                <div class="profile-card">
-                    <!-- GANTI LINK INI DENGAN GAMBAR FIY NANTI -->
-                    <img src="https://raw.githubusercontent.com/hayafakhry/tech-bugs/main/haya-profile.jpg" 
-                         alt="Haya Fakhry" 
-                         class="profile-pic" 
-                         onerror="this.src='https://ui-avatars.com/api/?name=Haya+Fakhry&background=967aa1&color=fff&size=150'">
-                    
-                    <h3 class="profile-name">Haya Fakhry</h3>
-                    <p class="profile-title">IT Student | Yayasan Peneraju</p>
-                    
-                    <div class="profile-details">
-                        <p><i class="fas fa-graduation-cap"></i> <strong>Education:</strong> Diploma in Computer System & Networking</p>
-                        <p><i class="fas fa-certificate"></i> <strong>Certifications:</strong> CompTIA Network+ & Cloud+ (In Progress)</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Malaysia</p>
-                        <p><i class="fas fa-bullseye"></i> <strong>Goal:</strong> Network/Cloud Engineer</p>
-                    </div>
-
-                    <!-- Progress Bars -->
-                    <div class="progress-section">
-                        <p>Network+ Progress <span>65%</span></p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 65%"></div></div>
-                        
-                        <p>Cloud+ Progress <span>40%</span></p>
-                        <div class="progress-bar"><div class="progress-fill" style="width: 40%"></div></div>
-                    </div>
-
-                    <!-- Social Links -->
-                    <div class="social-links-sidebar">
-                        <a href="https://github.com/hayafakhry" title="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" title="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:hayatifakhry@gmail.com" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="#" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="quick-links">
-                    <h4><i class="fas fa-link"></i> Quick Links</h4>
-                    <a href="network.html"><i class="fas fa-network-wired"></i> Network+ Notes</a>
-                    <a href="cloud.html"><i class="fas fa-cloud"></i> Cloud+ Labs</a>
-                    <a href="portfolio.html"><i class="fas fa-code"></i> Projects</a>
-                    <a href="dota.html"><i class="fas fa-gamepad"></i> Dota 2 Corner</a>
-                </div>
-            </aside>
+            </h1>
+            <p class="subtitle">
+                Documenting the journey of a <span class="highlight">Cloud & Network Security</span> student<br>
+                One bug fix at a time <i class="fas fa-mug-hot"></i>
+            </p>
         </div>
+    </header>
 
-        <!-- Footer Contact -->
-        <footer class="contact-footer">
-            <div class="contact-container">
-                <h3 class="contact-title">Contact Haya Fakhry</h3>
-                
-                <div class="email-box">
-                    <div class="email-icon">✉️</div>
-                    <a href="mailto:hayatifakhry@gmail.com" class="email-link">
-                        hayatifakhry@gmail.com
-                    </a>
+    <!-- Page Content Container -->
+    <main id="pageContent">
+        
+        <!-- HOME PAGE (Default) -->
+        <section id="homePage" class="page-content">
+            <div class="main-container">
+                <!-- Latest Post -->
+                <div class="content-box latest-post">
+                    <div class="post-header">
+                        <div class="post-date">
+                            <i class="far fa-calendar"></i> Mac 25, 2025
+                        </div>
+                        <h1 class="post-title">Firewall Configuration with pfSense</h1>
+                        <p style="color: var(--accent); font-style: italic;">Latest post • Network Security</p>
+                    </div>
+                    
+                    <div class="post-content">
+                        <p>Dalam post ini, saya akan berkongsi pengalaman pertama saya configure firewall menggunakan pfSense. pfSense adalah firewall open source yang powerful untuk network security.</p>
+                        
+                        <h3><i class="fas fa-shield-alt"></i> Langkah-langkah Configuration:</h3>
+                        <p>1. <strong>Installation:</strong> Download pfSense ISO dan install pada dedicated machine atau virtual environment.</p>
+                        <p>2. <strong>Initial Setup:</strong> Access web interface melalui default IP (192.168.1.1) dan setup admin password.</p>
+                        <p>3. <strong>Interface Configuration:</strong> Define WAN, LAN, dan OPT interfaces mengikut network topology.</p>
+                        <p>4. <strong>Firewall Rules:</strong> Create rules untuk allow/block traffic berdasarkan source, destination, port, dan protocol.</p>
+                        <p>5. <strong>NAT Configuration:</strong> Setup port forwarding untuk services yang perlu accessible dari internet.</p>
+                        <p>6. <strong>VPN Setup:</strong> Configure OpenVPN atau IPSec untuk remote access yang secure.</p>
+                        
+                        <h3><i class="fas fa-chart-line"></i> Best Practices:</h3>
+                        <p>• Always deny by default, allow by exception</p>
+                        <p>• Regular backup configuration</p>
+                        <p>• Enable logging untuk monitoring</p>
+                        <p>• Keep system updated</p>
+                        
+                        <p>Configuration firewall adalah skill penting dalam network security. Dengan pfSense, kita boleh build enterprise-grade security solution dengan zero cost.</p>
+                    </div>
                 </div>
-                
-                <div class="social-links-footer">
-                    <a href="https://github.com/hayafakhry" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" class="social-icon">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+
+                <!-- Table of Contents -->
+                <div class="toc-sidebar">
+                    <div class="content-box toc-container">
+                        <h2 class="toc-title"><i class="fas fa-book"></i> Blog Archive</h2>
+                        <ul class="toc-list" id="tocList">
+                            <!-- Generated by JavaScript -->
+                        </ul>
+                    </div>
                 </div>
-                
-                <p class="copyright">
-                    © 2024 Haya TechBugs. All learning content documented here.
-                </p>
             </div>
-        </footer>
-    </div>
+        </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+        <!-- ABOUT PAGE (Hidden by default) -->
+        <section id="aboutPage" class="page-content hidden">
+            <div class="about-container">
+                <div class="content-box">
+                    <div class="profile-pic">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h1 class="name">Haya Fakhry</h1>
+                    <p class="title">IT Student | Yayasan Peneraju</p>
+                    
+                    <div class="description">
+                        <p><span class="highlight">Hal, saya Haya Fakhry dari Kuala Lumpur.</span></p>
+                        <p>Graduate Diploma dalam <span class="highlight">Computer System and Networking</span>. 
+                        Sedang fokus dengan bidang <span class="highlight">Cloud Computing</span> dan 
+                        <span class="highlight">Network Security</span>.</p>
+                        <p>Blog ini adalah dokumentasi pembelajaran saya untuk sertifikasi 
+                        <span class="highlight">CompTIA Network+</span> dan <span class="highlight">Cloud+</span>.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-map-marker-alt"></i> Location</div>
+                            <div>Kuala Lumpur, Malaysia</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-graduation-cap"></i> Education</div>
+                            <div>Graduate Diploma in Computer System & Networking</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-bullseye"></i> Focus</div>
+                            <div>Cloud Computing & Network Security</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label"><i class="fas fa-certificate"></i> Certifications</div>
+                            <div>CompTIA Network+ & Cloud+ (In Progress)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Archive below About Me -->
+                <div class="content-box toc-container" style="height: 400px; margin-top: 30px;">
+                    <h2 class="toc-title"><i class="fas fa-history"></i> Recent Posts</h2>
+                    <ul class="toc-list" id="aboutTocList">
+                        <!-- Generated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- OTHER PAGES (Placeholders) -->
+        <section id="networkPage" class="page-content hidden">
+            <div class="page-section">
+                <div class="content-box">
+                    <h2 class="section-title">CompTIA Network+</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--text-medium);">
+                        Content for Network+ certification journey coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cloudPage" class="page-content hidden">
+            <div class="page-section">
+                <div class="content-box">
+                    <h2 class="section-title">CompTIA Cloud+</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--text-medium);">
+                        Content for Cloud+ certification journey coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dota2Page" class="page-content hidden">
+            <div class="page-section">
+                <div class="content-box">
+                    <h2 class="section-title">Dota 2 Content</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--text-medium);">
+                        Gaming content, strategies, and updates coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolioPage" class="page-content hidden">
+            <div class="page-section">
+                <div class="content-box">
+                    <h2 class="section-title">Portfolio</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--text-medium);">
+                        Projects and work portfolio coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="medsocPage" class="page-content hidden">
+            <div class="page-section">
+                <div class="content-box">
+                    <h2 class="section-title">Medical Society</h2>
+                    <p style="text-align: center; font-size: 1.2rem; color: var(--text-medium);">
+                        Medical society activities and updates coming soon...
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Contact Haya Fakhry</h3>
+            <p class="email">hayatifakhry@gmail.com</p>
+            <div class="copyright">
+                © 2024 Haya TechBugs. All learning content documented here.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== WEBSITE DATA =====
+        const blogPosts = [
+            { 
+                title: "Firewall Configuration with pfSense", 
+                date: "Mac 25", 
+                category: "Security",
+                icon: "fas fa-shield-alt"
+            },
+            { 
+                title: "AWS EC2 Instance Deployment", 
+                date: "Mac 22", 
+                category: "Cloud+",
+                icon: "fab fa-aws"
+            },
+            { 
+                title: "My Yayasan Peneraju Journey Begins", 
+                date: "Mac 20", 
+                category: "Personal",
+                icon: "fas fa-user-graduate"
+            },
+            { 
+                title: "Understanding Subnetting Basics", 
+                date: "Mac 18", 
+                category: "Network+",
+                icon: "fas fa-network-wired"
+            },
+            { 
+                title: "Docker Containers vs Virtual Machines", 
+                date: "Mac 15", 
+                category: "DevOps",
+                icon: "fab fa-docker"
+            },
+            { 
+                title: "Introduction to TCP/IP Model", 
+                date: "Mac 12", 
+                category: "Network+",
+                icon: "fas fa-sitemap"
+            },
+            { 
+                title: "Setting Up VPN with OpenVPN", 
+                date: "Mac 10", 
+                category: "Security",
+                icon: "fas fa-user-shield"
+            },
+            { 
+                title: "Azure vs AWS: Which to Learn First?", 
+                date: "Mac 8", 
+                category: "Cloud+",
+                icon: "fas fa-cloud"
+            },
+            { 
+                title: "Basic Linux Commands for Networking", 
+                date: "Mac 5", 
+                category: "Linux",
+                icon: "fab fa-linux"
+            },
+            { 
+                title: "Wireless Network Security Best Practices", 
+                date: "Mac 3", 
+                category: "Security",
+                icon: "fas fa-wifi"
+            }
+        ];
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate Table of Contents
+            generateTOC('tocList', blogPosts);
+            generateTOC('aboutTocList', blogPosts);
+            
+            // Setup navigation
+            setupNavigation();
+            
+            // Setup back to top button
+            setupBackToTop();
+            
+            // Setup steam particles
+            setupSteamParticles();
+            
+            // Setup mug interactivity
+            setupMugInteractivity();
+        });
+
+        // ===== FUNCTIONS =====
+        function generateTOC(containerId, posts) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            // Duplicate items for seamless scrolling (2 sets)
+            for (let set = 0; set < 2; set++) {
+                posts.forEach((post, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'toc-item';
+                    li.innerHTML = `
+                        <i class="${post.icon}"></i>
+                        <strong>${post.title}</strong>
+                        <span class="toc-item-date">${post.date} • ${post.category}</span>
+                    `;
+                    li.addEventListener('click', () => {
+                        alert(`Navigating to: ${post.title}\n\n(This is a demo. In a real site, this would open the full post.)`);
+                    });
+                    container.appendChild(li);
+                });
+            }
+        }
+
+        function setupNavigation() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            const pageContents = document.querySelectorAll('.page-content');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get target page
+                    const targetPage = this.getAttribute('data-page');
+                    
+                    // Update active nav link
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Hide all pages
+                    pageContents.forEach(page => page.classList.add('hidden'));
+                    
+                    // Show target page
+                    const targetElement = document.getElementById(`${targetPage}Page`);
+                    if (targetElement) {
+                        targetElement.classList.remove('hidden');
+                        
+                        // Scroll to top of content (skip header on internal pages)
+                        if (targetPage !== 'home') {
+                            window.scrollTo({
+                                top: document.getElementById('navbar').offsetHeight + 20,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        }
+
+        function setupBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function setupSteamParticles() {
+            const steam = document.querySelector('.steam');
+            
+            function createSteamParticle() {
+                const cloud = document.createElement('div');
+                cloud.classList.add('steam-cloud');
+                
+                const size = Math.random() * 30 + 20;
+                cloud.style.width = size + 'px';
+                cloud.style.height = size * 0.7 + 'px';
+                cloud.style.left = Math.random() * 60 - 30 + 'px';
+                cloud.style.opacity = Math.random() * 0.6 + 0.3;
+                
+                const duration = Math.random() * 2 + 2;
+                cloud.style.animation = `steamRise ${duration}s infinite ease-in-out ${Math.random() * 2}s`;
+                
+                steam.appendChild(cloud);
+                
+                // Remove after animation completes
+                setTimeout(() => {
+                    if (cloud.parentNode) {
+                        cloud.remove();
+                    }
+                }, duration * 1000 + 2000);
+            }
+            
+            // Generate steam particles periodically
+            setInterval(createSteamParticle, 800);
+        }
+
+        function setupMugInteractivity() {
+            const mug = document.querySelector('.mug-container');
+            
+            mug.addEventListener('mouseenter', () => {
+                mug.style.animation = 'vibrate 0.5s ease-in-out infinite';
+            });
+            
+            mug.addEventListener('mouseleave', () => {
+                mug.style.animation = 'vibrate 2s ease-in-out infinite';
+            });
+            
+            // Click effect
+            mug.addEventListener('click', () => {
+                mug.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    mug.style.transform = 'scale(1)';
+                }, 300);
+                
+                // Create extra steam on click
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const steam = document.querySelector('.steam');
+                        const cloud = document.createElement('div');
+                        cloud.classList.add('steam-cloud');
+                        
+                        const size = Math.random() * 40 + 30;
+                        cloud.style.width = size + 'px';
+                        cloud.style.height = size * 0.7 + 'px';
+                        cloud.style.left = Math.random() * 80 - 40 + 'px';
+                        cloud.style.opacity = Math.random() * 0.7 + 0.3;
+                        
+                        const duration = Math.random() * 1.5 + 1;
+                        cloud.style.animation = `steamRise ${duration}s ease-in-out`;
+                        
+                        steam.appendChild(cloud);
+                        
+                        setTimeout(() => {
+                            if (cloud.parentNode) {
+                                cloud.remove();
+                            }
+                        }, duration * 1000);
+                    }, i * 100);
+                }
+            });
+        }
+    </script>
 </body>
 </html>
