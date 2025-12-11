@@ -26,7 +26,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== BACKGROUND & CLOUDS ===== */
+/* ===== BACKGROUND & CLOUDS (AWAN BANYAK BESAR) ===== */
 body::before {
     content: '';
     position: fixed;
@@ -44,23 +44,32 @@ body::before {
 
 .cloud {
     position: fixed;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 50%;
-    filter: blur(10px);
+    filter: blur(25px);
     z-index: -1;
     opacity: 0.7;
+    pointer-events: none;
 }
 
+/* Animasi awan */
 @keyframes float {
-    0% { transform: translateX(-100px) translateY(0); }
-    50% { transform: translateX(50px) translateY(-10px); }
-    100% { transform: translateX(100vw) translateY(0); }
+    0% { transform: translateX(-200px) translateY(0) scale(1); }
+    50% { transform: translateX(100px) translateY(-30px) scale(1.1); }
+    100% { transform: translateX(calc(100vw + 200px)) translateY(0) scale(1); }
 }
 
-.cloud:nth-child(1) { animation: float 25s infinite linear; }
-.cloud:nth-child(2) { animation: float 30s infinite linear 5s; }
-.cloud:nth-child(3) { animation: float 35s infinite linear 10s; }
-.cloud:nth-child(4) { animation: float 40s infinite linear 15s; }
+@keyframes float-reverse {
+    0% { transform: translateX(calc(100vw + 200px)) translateY(0) scale(1); }
+    50% { transform: translateX(100px) translateY(30px) scale(1.1); }
+    100% { transform: translateX(-200px) translateY(0) scale(1); }
+}
+
+@keyframes float-vertical {
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
+    50% { transform: translateY(-50px) translateX(20px) scale(1.15); opacity: 0.8; }
+    100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.5; }
+}
 
 /* ===== NAVIGATION ===== */
 .navbar {
@@ -109,7 +118,7 @@ body::before {
     font-weight: 600;
 }
 
-/* ===== HEADER/BRAND ===== */
+/* ===== HEADER/BRAND (UPDATED) ===== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -118,83 +127,59 @@ body::before {
 
 .brand-header {
     text-align: center;
-    padding: 40px 0 30px;
-}
-
-.header-icons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 15px;
-    font-size: 3rem;
+    padding: 30px 0 20px;
     position: relative;
 }
 
-.butterfly-icon {
-    color: var(--soft-purple);
-    font-size: 3.5rem;
-    filter: drop-shadow(0 4px 8px rgba(179, 146, 172, 0.4));
-    animation: butterfly-flutter 4s infinite ease-in-out;
-}
-
-@keyframes butterfly-flutter {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(8deg); }
-}
-
-.hotchocolate-icon {
-    position: relative;
-    color: #8b5a2b;
-    font-size: 3rem;
-    filter: drop-shadow(0 3px 6px rgba(139, 90, 43, 0.3));
-}
-
-.steam {
+/* Butterfly kecil-kecil banyak di sekitar header */
+.mini-butterfly {
     position: absolute;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    animation: steam-float 3s infinite ease-out;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    z-index: 1;
+    animation: flutter-tiny 4s infinite ease-in-out;
 }
 
-.s1 { width: 10px; height: 10px; top: -15px; left: 15px; animation-delay: 0s; }
-.s2 { width: 8px; height: 8px; top: -20px; left: 25px; animation-delay: 0.5s; }
-.s3 { width: 6px; height: 6px; top: -25px; left: 10px; animation-delay: 1s; }
+@keyframes flutter-tiny {
+    0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-5px) rotate(10deg) scale(1.1); }
+}
 
-@keyframes steam-float {
-    0% { transform: translateY(0) scale(1); opacity: 0.8; }
-    100% { transform: translateY(-25px) scale(1.5); opacity: 0; }
+/* Frappe drink icon */
+.frappe-icon {
+    font-size: 2.5rem;
+    color: #8b5a2b;
+    filter: drop-shadow(0 3px 6px rgba(139, 90, 43, 0.3));
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 .header-text {
     margin-top: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .haya-text {
     font-family: 'Dancing Script', cursive;
-    font-size: 4.8rem;
+    font-size: 5.8rem; /* BESAR & BOLD */
     font-weight: 700;
     color: var(--dark-text);
-    line-height: 1;
+    line-height: 0.85;
     margin: 0;
-    letter-spacing: 1.5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .techbugs-text {
     font-family: 'Inter', sans-serif;
-    font-size: 2rem;
+    font-size: 3rem; /* BESAR & MINIMALIS */
     font-weight: 300;
     color: var(--medium-text);
-    letter-spacing: 4px;
+    letter-spacing: 10px;
     text-transform: uppercase;
     margin-top: 5px;
-}
-
-.tagline {
-    font-size: 1.1rem;
-    color: var(--light-text);
-    margin-top: 10px;
-    font-weight: 400;
+    letter-spacing: 12px;
 }
 
 /* ===== MAIN LAYOUT ===== */
@@ -573,25 +558,12 @@ body::before {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .haya-text {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
     
     .techbugs-text {
-        font-size: 1.5rem;
-        letter-spacing: 2px;
-    }
-    
-    .header-icons {
-        font-size: 2.2rem;
-        gap: 20px;
-    }
-    
-    .butterfly-icon {
-        font-size: 2.5rem;
-    }
-    
-    .hotchocolate-icon {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        letter-spacing: 6px;
     }
     
     .nav-links {
@@ -620,6 +592,11 @@ body::before {
     .email-link {
         font-size: 1.1rem;
     }
+    
+    /* Hide some mini butterflies on mobile */
+    .mini-butterfly:nth-child(n+6) {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -628,11 +605,16 @@ body::before {
     }
     
     .brand-header {
-        padding: 30px 0 20px;
+        padding: 20px 0 15px;
     }
     
     .haya-text {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
+    }
+    
+    .techbugs-text {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
     }
     
     .main-layout {
@@ -641,5 +623,9 @@ body::before {
     
     .blog-post {
         padding: 20px;
+    }
+    
+    .frappe-icon {
+        font-size: 2rem;
     }
 }
