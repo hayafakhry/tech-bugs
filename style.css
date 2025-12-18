@@ -182,7 +182,7 @@ body::before {
 
 .techbugs-text {
     font-family: 'Inter', Covered By Your Grace;
-    font-size: 2rem;
+    font-size: 5rem;
     font-weight: 300;
     color: var(--medium-text);
     letter-spacing: 4px;
