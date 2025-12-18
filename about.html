@@ -3,26 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | HayaTechBugs</title>
+    <title>About - Haya TechBugs</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Same navigation & background as index.html -->
-    
-    <div class="container">
-        <header class="brand-header">
-            <!-- Same header as index.html -->
-        </header>
-        
-        <div class="page-content">
-            <h1>About Haya Fakhry</h1>
-            <p>This would be the About page content. Fiy can edit this later.</p>
-        </div>
-        
-        <!-- Same footer as index.html -->
+    <!-- Background Elements -->
+    <div class="background-container">
+        <div class="stars-container" id="stars-container"></div>
+        <div class="clouds-container" id="clouds-container"></div>
     </div>
-    
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-haya">Haya</span>
+                    <span class="logo-techbugs">techbugs</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="#network">Network</a></li>
+                <li><a href="#cloud">cloud+</a></li>
+                <li><a href="#dota2">Dota2</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#medsoc">Medsoc</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Page Header -->
+    <header class="main-header" style="min-height: 60vh; padding-top: 100px;">
+        <div class="header-content">
+            <div class="header-text" style="max-width: 800px; text-align: center;">
+                <h1 class="header-title">
+                    About <span class="haya-bold">Haya</span>
+                    <span class="techbugs-minimalist">techbugs</span>
+                </h1>
+                <p class="header-subtitle">The journey of documenting IT & Cloud knowledge</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Content -->
+    <main class="main-content">
+        <div class="container" style="flex-direction: column; max-width: 900px;">
+            <section class="about-content">
+                <div class="about-intro">
+                    <div class="about-image" style="text-align: center; margin-bottom: 40px;">
+                        <div class="avatar-placeholder" style="width: 180px; height: 180px; margin: 0 auto;">
+                            <i class="fas fa-laptop-code" style="font-size: 4rem;"></i>
+                        </div>
+                    </div>
+                    
+                    <h2 style="text-align: center; margin-bottom: 30px; font-size: 2.2rem;">Haya Fakhry</h2>
+                    
+                    <div class="about-text" style="background: rgba(255, 255, 255, 0.08); padding: 30px; border-radius: 20px; margin-bottom: 40px;">
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                            Hello! I'm Haya Fakhry from Kuala Lumpur, Malaysia. Welcome to my personal documentation space where I share my learning journey in Information Technology.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
+                            This website was created as a knowledge repository for IT Networking and Cloud Computing fundamentals. As someone passionate about technology, I believe in learning by documenting and sharing knowledge with others.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            The name "techbugs" represents those little technical challenges we encounter and eventually solve through learning and persistence. Each post here is a documentation of solving one of those "bugs" in the vast world of IT.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="about-details">
+                    <div class="detail-card" style="background: rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                        <h3 style="color: #e1bee7; margin-bottom: 20px; font-size: 1.5rem;">
+                            <i class="fas fa-bullseye" style="margin-right: 10px;"></i> Mission
+                        </h3>
+                        <p style="line-height: 1.7;">
+                            To create a comprehensive, accessible resource for beginners in IT Networking and Cloud Computing, breaking down complex topics into understandable concepts.
+                        </p>
+                    </div>
+                    
+                    <div class="detail-card" style="background: rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 20px; margin-bottom: 30px;">
+                        <h3 style="color: #e1bee7; margin-bottom: 20px; font-size: 1.5rem;">
+                            <i class="fas fa-graduation-cap" style="margin-right: 10px;"></i> Topics Covered
+                        </h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+                            <span style="background: rgba(33, 150, 243, 0.2); color: #81d4fa; padding: 8px 15px; border-radius: 20px;">Network Protocols</span>
+                            <span style="background: rgba(33, 150, 243, 0.2); color: #81d4fa; padding: 8px 15px; border-radius: 20px;">IP Addressing</span>
+                            <span style="background: rgba(76, 175, 80, 0.2); color: #a5d6a7; padding: 8px 15px; border-radius: 20px;">AWS Services</span>
+                            <span style="background: rgba(76, 175, 80, 0.2); color: #a5d6a7; padding: 8px 15px; border-radius: 20px;">Azure Fundamentals</span>
+                            <span style="background: rgba(156, 39, 176, 0.2); color: #e1bee7; padding: 8px 15px; border-radius: 20px;">Security Basics</span>
+                            <span style="background: rgba(255, 193, 7, 0.2); color: #fff59d; padding: 8px 15px; border-radius: 20px;">Troubleshooting</span>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card" style="background: rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 20px;">
+                        <h3 style="color: #e1bee7; margin-bottom: 20px; font-size: 1.5rem;">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i> Get In Touch
+                        </h3>
+                        <p style="line-height: 1.7; margin-bottom: 15px;">
+                            I'm always open to discussions about technology, collaborations, or just chatting about IT topics.
+                        </p>
+                        <a href="mailto:hayatifakhry@gmail.com" style="display: inline-flex; align-items: center; color: #e1bee7; text-decoration: none; font-weight: 600;">
+                            <i class="fas fa-paper-plane" style="margin-right: 10px;"></i>
+                            hayatifakhry@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Contact Haya Fakhry</h3>
+                <a href="mailto:hayatifakhry@gmail.com" class="footer-email">
+                    <i class="fas fa-envelope"></i>
+                    hayatifakhry@gmail.com
+                </a>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#network">Network Docs</a></li>
+                    <li><a href="#cloud">Cloud Docs</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-title">Categories</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Networking</a></li>
+                    <li><a href="#">Cloud Computing</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">
+                © 2024 Haya TechBugs. All learning content documented here.
+            </p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
